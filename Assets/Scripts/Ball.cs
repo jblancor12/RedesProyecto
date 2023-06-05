@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 namespace Mirror.Examples.Pong
 {
@@ -55,6 +56,12 @@ namespace Mirror.Examples.Pong
 
                 // Set Velocity with dir * speed
                 rigidbody2d.velocity = dir * speed;
+            }
+            if (col.gameObject.tag == "WallRight") {
+                Debug.Log("Right");
+            }
+            if (col.gameObject.tag == "WallLeft") {
+                Debug.Log("Left");
             }
         }
     }
