@@ -7,7 +7,8 @@ namespace Mirror.Examples.Pong
     {
         public float speed = 30;
         public Rigidbody2D rigidbody2d;
-
+        
+        
         public override void OnStartServer()
         {
             base.OnStartServer();
@@ -57,12 +58,31 @@ namespace Mirror.Examples.Pong
                 // Set Velocity with dir * speed
                 rigidbody2d.velocity = dir * speed;
             }
+            Vector2 memory = rigidbody2d.velocity;
             if (col.gameObject.tag == "WallRight") {
-                Debug.Log("Right");
+                rigidbody2d.velocity = new Vector2(0, 0).normalized;
+                transform.position = new Vector3(0.0f, 0.0f, 0.0f);
+                Invoke("restart", 2);
             }
-            if (col.gameObject.tag == "WallLeft") {
-                Debug.Log("Left");
+            if (col.gameObject.tag == "WallLeft")
+            {
+                rigidbody2d.velocity = new Vector2(0, 0).normalized;
+                transform.position = new Vector3(0.0f, 0.0f, 0.0f);
+                Invoke("restart", 2);
             }
+        }
+
+        void restart()
+        {
+            int num = Random.Range(1, 100);
+            if (num>50)
+            {
+                rigidbody2d.velocity = Vector2.right * speed;
+            }
+            else {
+                rigidbody2d.velocity = Vector2.left * speed;
+            }
+                
         }
     }
 }
