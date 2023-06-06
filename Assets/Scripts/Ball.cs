@@ -62,13 +62,13 @@ namespace Mirror.Examples.Pong
             if (col.gameObject.tag == "WallRight") {
                 rigidbody2d.velocity = new Vector2(0, 0).normalized;
                 transform.position = new Vector3(0.0f, 0.0f, 0.0f);
-                Invoke("restart", 2);
+                Invoke("restart", 1);
             }
             if (col.gameObject.tag == "WallLeft")
             {
                 rigidbody2d.velocity = new Vector2(0, 0).normalized;
                 transform.position = new Vector3(0.0f, 0.0f, 0.0f);
-                Invoke("restart", 2);
+                Invoke("restart", 1);
             }
         }
 
