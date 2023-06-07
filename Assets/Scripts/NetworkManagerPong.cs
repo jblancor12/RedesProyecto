@@ -16,6 +16,7 @@ namespace Mirror.Examples.Pong
         public Transform leftRacketSpawn;
         public Transform rightRacketSpawn;
         GameObject ball;
+        public bool gameStart = false;
 
         public override void OnServerAddPlayer(NetworkConnectionToClient conn)
         {
@@ -29,6 +30,7 @@ namespace Mirror.Examples.Pong
             {
                 ball = Instantiate(spawnPrefabs.Find(prefab => prefab.name == "Ball"));
                 NetworkServer.Spawn(ball);
+                gameStart = true;
             }
         }
 
@@ -40,6 +42,12 @@ namespace Mirror.Examples.Pong
 
             // call base functionality (actually destroys the player)
             base.OnServerDisconnect(conn);
+            gameStart = false;
+        }
+
+        public bool getGameStart()
+        {
+            return gameStart;
         }
     }
 }

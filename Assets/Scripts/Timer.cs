@@ -12,27 +12,34 @@ namespace Mirror.Examples.Pong
         public float toSpeedUp;
 
         public Ball ball_script;
+        public NetworkManagerPong network_script;
 
         public TextMeshProUGUI CountUpTimer;
 
-        void Start()
+        public override void OnStartServer()
         {
+            base.OnStartServer();
+
             currentTime = 0f;
             toSpeedUp = 0;
-            
+            network_script = GameObject.FindGameObjectWithTag("Network").GetComponent<NetworkManagerPong>();
         }
 
         void Update()
         {
-            currentTime += 1 * Time.deltaTime;
-            toSpeedUp += 1 * Time.deltaTime;
-            CountUpTimer.GetComponent<TextMeshProUGUI>().text = currentTime.ToString("0");
-
-            if(toSpeedUp.ToString("0") == "10")
+            if (network_script.getGameStart())
             {
-                toSpeedUp = 0;
+                currentTime += 1 * Time.deltaTime;
+                toSpeedUp += 1 * Time.deltaTime;
+                CountUpTimer.GetComponent<TextMeshProUGUI>().text = currentTime.ToString("0");
 
-                ball_script.speedUp();
+
+                if (toSpeedUp.ToString("0") == "10")
+                {
+                    toSpeedUp = 0;
+
+                    ball_script.speedUp();
+                }
             }
         }
     }

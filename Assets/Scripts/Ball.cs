@@ -105,7 +105,7 @@ namespace Mirror.Examples.Pong
 
         public void speedUp()
         {
-            speed += 10;
+            this.speed = 30;
             Debug.Log(speed);
         }
     }

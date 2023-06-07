@@ -1734,6 +1734,7 @@ MonoBehaviour:
   currentTime: 0
   toSpeedUp: 0
   ball_script: {fileID: 114692463781779748, guid: 5f7a7f34494ed40268eff49dbf9168bf, type: 3}
+  network_script: {fileID: 1886246552}
   CountUpTimer: {fileID: 802403618}
 --- !u!114 &1830152634
 MonoBehaviour:
@@ -1801,7 +1802,7 @@ GameObject:
   - component: {fileID: 1886246553}
   m_Layer: 0
   m_Name: NetworkManager
-  m_TagString: Untagged
+  m_TagString: Network
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1876,6 +1877,7 @@ MonoBehaviour:
   timeInterpolationGui: 0
   leftRacketSpawn: {fileID: 473997961}
   rightRacketSpawn: {fileID: 1397990096}
+  gameStart: 0
 --- !u!114 &1886246553
 MonoBehaviour:
   m_ObjectHideFlags: 0
