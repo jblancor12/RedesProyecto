@@ -4,7 +4,7 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - ball: {fileID: 1080679924113744, guid: 5f7a7f34494ed40268eff49dbf9168bf, type: 3}
+  - ball_script: {fileID: 114692463781779748, guid: 5f7a7f34494ed40268eff49dbf9168bf, type: 3}
   - CountUpTimer: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}

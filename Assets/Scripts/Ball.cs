@@ -1,5 +1,9 @@
-using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
+
 
 namespace Mirror.Examples.Pong
 {
@@ -7,15 +11,21 @@ namespace Mirror.Examples.Pong
     {
         public float speed = 30;
         public Rigidbody2D rigidbody2d;
-        
-        
+
+        public TextMeshProUGUI score1;
+        private int scoreKeep1;
+        public TextMeshProUGUI score2;
+        private int scoreKeep2;
+
         public override void OnStartServer()
         {
             base.OnStartServer();
 
             // only simulate ball physics on server
             rigidbody2d.simulated = true;
-
+            speed = 30;
+            scoreKeep1 = 0;
+            scoreKeep2 = 0;
             // Serve the ball from left player
             rigidbody2d.velocity = Vector2.right * speed;
         }
@@ -32,8 +42,8 @@ namespace Mirror.Examples.Pong
         }
 
         // only call this on server
-        [ServerCallback]
-        void OnCollisionEnter2D(Collision2D col)
+        
+        public void OnCollisionEnter2D(Collision2D col)
         {
             // Note: 'col' holds the collision information. If the
             // Ball collided with a racket, then:
@@ -58,17 +68,29 @@ namespace Mirror.Examples.Pong
                 // Set Velocity with dir * speed
                 rigidbody2d.velocity = dir * speed;
             }
+
             Vector2 memory = rigidbody2d.velocity;
             if (col.gameObject.tag == "WallRight") {
+                
                 rigidbody2d.velocity = new Vector2(0, 0).normalized;
                 transform.position = new Vector3(0.0f, 0.0f, 0.0f);
+
+                scoreKeep2 += 1;
+                
+                //score2.GetComponent<TextMeshProUGUI>().text = scoreKeep2.ToString();
+
                 Invoke("restart", 1);
             }
             if (col.gameObject.tag == "WallLeft")
             {
                 rigidbody2d.velocity = new Vector2(0, 0).normalized;
                 transform.position = new Vector3(0.0f, 0.0f, 0.0f);
-                Invoke("restart", 1);
+
+                scoreKeep1 += 1;
+                
+                //score1.GetComponent<TextMeshProUGUI>().text = scoreKeep1.ToString();
+
+                Invoke("restart", 1);            
             }
         }
 
@@ -83,6 +105,12 @@ namespace Mirror.Examples.Pong
                 rigidbody2d.velocity = Vector2.left * speed;
             }
                 
+        }
+
+        public void speedUp()
+        {
+            speed += 10;
+            Debug.Log(speed);
         }
     }
 }

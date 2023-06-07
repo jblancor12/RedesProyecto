@@ -6,12 +6,12 @@ using TMPro;
 
 namespace Mirror.Examples.Pong
 {
-    public class Timer : MonoBehaviour
+    public class Timer : NetworkBehaviour
     {
         public float currentTime;
         public float toSpeedUp;
-        public GameObject ball;
-        private Ball ball_script;
+
+        public Ball ball_script;
 
         public TextMeshProUGUI CountUpTimer;
 
@@ -27,12 +27,12 @@ namespace Mirror.Examples.Pong
             currentTime += 1 * Time.deltaTime;
             toSpeedUp += 1 * Time.deltaTime;
             CountUpTimer.GetComponent<TextMeshProUGUI>().text = currentTime.ToString("0");
-            if(toSpeedUp.ToString("0") == "30")
+
+            if(toSpeedUp.ToString("0") == "10")
             {
                 toSpeedUp = 0;
-                Debug.Log("Speed up");
-                //ball_script = ball.GetComponent<Ball>();
-                //ball_script.speed +=5;
+
+                ball_script.speedUp();
             }
         }
     }
