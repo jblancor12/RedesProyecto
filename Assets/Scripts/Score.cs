@@ -25,7 +25,6 @@ namespace Mirror.Examples.Pong
         public void AddScore1()
         {
             ScorePlayer1 += 1;
-            print(ScorePlayer1);
             
         }
 
@@ -34,7 +33,6 @@ namespace Mirror.Examples.Pong
 
             
             ScorePlayer2 += 1;
-            print(ScorePlayer2);
             
         }
 

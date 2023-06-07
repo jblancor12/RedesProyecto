@@ -12,7 +12,7 @@ namespace Mirror.Examples.Pong
         public float speed = 30;
         public Rigidbody2D rigidbody2d;
         public Score score;
-
+        GameObject ball;
 
         public override void OnStartServer()
         {
@@ -20,7 +20,6 @@ namespace Mirror.Examples.Pong
 
             // only simulate ball physics on server
             rigidbody2d.simulated = true;
-            speed = 30;
             // Serve the ball from left player
             rigidbody2d.velocity = Vector2.right * speed;
             score = GameObject.FindGameObjectWithTag("Hud").GetComponent<Score>();
@@ -105,8 +104,8 @@ namespace Mirror.Examples.Pong
 
         public void speedUp()
         {
-            this.speed = 30;
-            Debug.Log(speed);
+            ball = GameObject.FindGameObjectWithTag("Ball");
+            ball.GetComponent<Ball>().speed += 10;
         }
     }
 }

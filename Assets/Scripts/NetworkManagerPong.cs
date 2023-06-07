@@ -30,6 +30,8 @@ namespace Mirror.Examples.Pong
             {
                 ball = Instantiate(spawnPrefabs.Find(prefab => prefab.name == "Ball"));
                 NetworkServer.Spawn(ball);
+                ball.tag = "Ball";
+
                 gameStart = true;
             }
         }

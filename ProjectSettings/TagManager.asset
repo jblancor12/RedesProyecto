@@ -8,6 +8,7 @@ TagManager:
   - WallLeft
   - Hud
   - Network
+  - Ball
   layers:
   - Default
   - TransparentFX
