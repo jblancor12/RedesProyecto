@@ -11,11 +11,8 @@ namespace Mirror.Examples.Pong
     {
         public float speed = 30;
         public Rigidbody2D rigidbody2d;
+        public Score score;
 
-        public TextMeshProUGUI score1;
-        private int scoreKeep1;
-        public TextMeshProUGUI score2;
-        private int scoreKeep2;
 
         public override void OnStartServer()
         {
@@ -24,10 +21,9 @@ namespace Mirror.Examples.Pong
             // only simulate ball physics on server
             rigidbody2d.simulated = true;
             speed = 30;
-            scoreKeep1 = 0;
-            scoreKeep2 = 0;
             // Serve the ball from left player
             rigidbody2d.velocity = Vector2.right * speed;
+            score = GameObject.FindGameObjectWithTag("Hud").GetComponent<Score>();
         }
 
         float HitFactor(Vector2 ballPos, Vector2 racketPos, float racketHeight)
@@ -75,7 +71,7 @@ namespace Mirror.Examples.Pong
                 rigidbody2d.velocity = new Vector2(0, 0).normalized;
                 transform.position = new Vector3(0.0f, 0.0f, 0.0f);
 
-                scoreKeep2 += 1;
+                score.AddScore1();
                 
                 //score2.GetComponent<TextMeshProUGUI>().text = scoreKeep2.ToString();
 
@@ -86,7 +82,7 @@ namespace Mirror.Examples.Pong
                 rigidbody2d.velocity = new Vector2(0, 0).normalized;
                 transform.position = new Vector3(0.0f, 0.0f, 0.0f);
 
-                scoreKeep1 += 1;
+               score.AddScore2();
                 
                 //score1.GetComponent<TextMeshProUGUI>().text = scoreKeep1.ToString();
 
