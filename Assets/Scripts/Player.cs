@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Mirror.Examples.Pong
+namespace Mirror
 {
     public class Player : NetworkBehaviour
     {

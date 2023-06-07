@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-namespace Mirror.Examples.Pong
+namespace Mirror
 {
     public class Score : NetworkBehaviour
     {
