@@ -33,9 +33,7 @@ namespace Mirror
         {
             if (network_script.getGameStart())
             {
-                //currentTime += 1 * Time.deltaTime;
                 toSpeedUp += 1 * Time.deltaTime;
-                //CountUpTimer.GetComponent<TextMeshProUGUI>().text = currentTime.ToString("0");
                 if(isServer){
                     Debug.Log("corriendo en server");
                 }
