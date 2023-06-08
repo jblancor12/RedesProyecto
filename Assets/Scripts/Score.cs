@@ -12,8 +12,13 @@ namespace Mirror
         private int ScorePlayer2 = 0;
         public TextMeshProUGUI TextScorePlayer1;
         public TextMeshProUGUI TextScorePlayer2;
-        void Start()
+
+        public override void OnStartServer()
         {
+            base.OnStartServer();
+
+            ScorePlayer1 = 0;
+            ScorePlayer2 = 0;
             TextScorePlayer1.GetComponent<TextMeshProUGUI>().text = ScorePlayer1.ToString();
             TextScorePlayer2.GetComponent<TextMeshProUGUI>().text = ScorePlayer2.ToString();
         }

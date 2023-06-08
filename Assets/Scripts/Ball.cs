@@ -12,6 +12,7 @@ namespace Mirror
         public float speed = 30;
         public Rigidbody2D rigidbody2d;
         public Score score;
+        private string side = "Right";
         GameObject ball;
 
         public override void OnStartServer()
@@ -70,6 +71,7 @@ namespace Mirror
                 rigidbody2d.velocity = new Vector2(0, 0).normalized;
                 transform.position = new Vector3(0.0f, 0.0f, 0.0f);
 
+                side = "Right";
                 score.AddScore1();
                 
                 //score2.GetComponent<TextMeshProUGUI>().text = scoreKeep2.ToString();
@@ -81,7 +83,8 @@ namespace Mirror
                 rigidbody2d.velocity = new Vector2(0, 0).normalized;
                 transform.position = new Vector3(0.0f, 0.0f, 0.0f);
 
-               score.AddScore2();
+                side = "Left";
+                score.AddScore2();
                 
                 //score1.GetComponent<TextMeshProUGUI>().text = scoreKeep1.ToString();
 
@@ -91,8 +94,7 @@ namespace Mirror
 
         void restart()
         {
-            int num = Random.Range(1, 100);
-            if (num>50)
+            if (side == "Right")
             {
                 rigidbody2d.velocity = Vector2.right * speed;
             }
