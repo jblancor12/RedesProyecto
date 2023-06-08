@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 /*
 	Documentation: https://mirror-networking.gitbook.io/docs/components/network-manager
@@ -16,6 +17,7 @@ namespace Mirror
         public Transform leftRacketSpawn;
         public Transform rightRacketSpawn;
         GameObject ball;
+    
         public bool gameStart = false;
 
         public override void OnServerAddPlayer(NetworkConnectionToClient conn)
@@ -24,6 +26,7 @@ namespace Mirror
             Transform start = numPlayers == 0 ? leftRacketSpawn : rightRacketSpawn;
             GameObject player = Instantiate(playerPrefab, start.position, start.rotation);
             NetworkServer.AddPlayerForConnection(conn, player);
+           
 
             // spawn ball if two players
             if (numPlayers == 2)

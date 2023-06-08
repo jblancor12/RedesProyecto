@@ -108,4 +108,6 @@ namespace Mirror
             ball.GetComponent<Ball>().speed += 10;
         }
     }
+
+
 }

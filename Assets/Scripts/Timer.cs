@@ -8,6 +8,7 @@ namespace Mirror
 {
     public class Timer : NetworkBehaviour
     {
+        [SyncVar]
         public float currentTime;
         public float toSpeedUp;
 
@@ -29,9 +30,13 @@ namespace Mirror
         {
             if (network_script.getGameStart())
             {
-                currentTime += 1 * Time.deltaTime;
+                //currentTime += 1 * Time.deltaTime;
                 toSpeedUp += 1 * Time.deltaTime;
-                CountUpTimer.GetComponent<TextMeshProUGUI>().text = currentTime.ToString("0");
+                //CountUpTimer.GetComponent<TextMeshProUGUI>().text = currentTime.ToString("0");
+                if(isServer){
+                    Debug.Log("corriendo en server");
+                }
+                runTime();
 
 
                 if (toSpeedUp.ToString("0") == "10")
@@ -41,6 +46,12 @@ namespace Mirror
                     ball_script.speedUp();
                 }
             }
+        }
+
+        [ClientRpc]
+        void runTime(){
+            currentTime += 1 * Time.deltaTime;
+            CountUpTimer.GetComponent<TextMeshProUGUI>().text = currentTime.ToString("0");
         }
     }
 }
