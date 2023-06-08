@@ -146,7 +146,6 @@ GameObject:
   - component: {fileID: 4828737002269823881}
   - component: {fileID: 4828737002269823886}
   - component: {fileID: 4828737002269823887}
-  - component: {fileID: 4828737002269823880}
   m_Layer: 5
   m_Name: Score Player1
   m_TagString: Untagged
@@ -271,23 +270,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &4828737002269823880
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4828737002269823882}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneId: 0
-  _assetId: 0
-  serverOnly: 1
-  visible: 0
-  hasSpawned: 0
 --- !u!1 &4828737002417837489
 GameObject:
   m_ObjectHideFlags: 0
@@ -404,7 +386,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneId: 0
-  _assetId: 0
+  _assetId: 3243392434
   serverOnly: 0
   visible: 0
   hasSpawned: 0
@@ -454,7 +436,6 @@ GameObject:
   - component: {fileID: 4828737002591217261}
   - component: {fileID: 4828737002591217266}
   - component: {fileID: 4828737002591217267}
-  - component: {fileID: 4828737002591217260}
   m_Layer: 5
   m_Name: Score Player2
   m_TagString: Untagged
@@ -579,23 +560,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &4828737002591217260
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4828737002591217262}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneId: 0
-  _assetId: 0
-  serverOnly: 1
-  visible: 0
-  hasSpawned: 0
 --- !u!1 &4828737002596706956
 GameObject:
   m_ObjectHideFlags: 0
@@ -711,7 +675,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneId: 0
-  _assetId: 0
+  _assetId: 3243392434
   serverOnly: 0
   visible: 0
   hasSpawned: 0

@@ -16,15 +16,18 @@ namespace Mirror
         public NetworkManagerPong network_script;
 
         public TextMeshProUGUI CountUpTimer;
+    
 
         public override void OnStartServer()
         {
             base.OnStartServer();
-
+           
             currentTime = 0f;
             toSpeedUp = 0;
             network_script = GameObject.FindGameObjectWithTag("Network").GetComponent<NetworkManagerPong>();
         }
+
+
 
         void Update()
         {
@@ -53,5 +56,6 @@ namespace Mirror
             currentTime += 1 * Time.deltaTime;
             CountUpTimer.GetComponent<TextMeshProUGUI>().text = currentTime.ToString("0");
         }
+
     }
 }

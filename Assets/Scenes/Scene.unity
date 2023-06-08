@@ -1262,10 +1262,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4828737002269823880, guid: 105c5324dd29d0b45a3d0473e58ebe72, type: 3}
-      propertyPath: sceneId
-      value: 509141926
-      objectReference: {fileID: 0}
     - target: {fileID: 4828737002417837492, guid: 105c5324dd29d0b45a3d0473e58ebe72, type: 3}
       propertyPath: network_script
       value: 
@@ -1273,10 +1269,6 @@ PrefabInstance:
     - target: {fileID: 4828737002417837493, guid: 105c5324dd29d0b45a3d0473e58ebe72, type: 3}
       propertyPath: sceneId
       value: 4211102742
-      objectReference: {fileID: 0}
-    - target: {fileID: 4828737002591217260, guid: 105c5324dd29d0b45a3d0473e58ebe72, type: 3}
-      propertyPath: sceneId
-      value: 182119448
       objectReference: {fileID: 0}
     - target: {fileID: 4828737002596706956, guid: 105c5324dd29d0b45a3d0473e58ebe72, type: 3}
       propertyPath: m_Name
@@ -1374,5 +1366,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4828737002596706963, guid: 105c5324dd29d0b45a3d0473e58ebe72, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 105c5324dd29d0b45a3d0473e58ebe72, type: 3}
