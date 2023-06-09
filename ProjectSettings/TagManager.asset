@@ -9,6 +9,7 @@ TagManager:
   - Hud
   - Network
   - Ball
+  - Outside
   layers:
   - Default
   - TransparentFX
