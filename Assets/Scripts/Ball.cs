@@ -44,11 +44,14 @@ namespace Mirror
                     Vector2 dir = new Vector2(x, y).normalized;
 
                     rigidbody2d.velocity = dir * speed;
+                    speedUp();
                 }
 
                 Vector2 memory = rigidbody2d.velocity;
                 if (col.gameObject.tag == "WallRight")
                 {
+                    ball = GameObject.FindGameObjectWithTag("Ball");
+                    ball.GetComponent<Ball>().speed = 30;
 
                     rigidbody2d.velocity = new Vector2(0, 0).normalized;
                     transform.position = new Vector3(0.0f, 0.0f, 0.0f);
@@ -61,6 +64,9 @@ namespace Mirror
                 }
                 if (col.gameObject.tag == "WallLeft")
                 {
+                    ball = GameObject.FindGameObjectWithTag("Ball");
+                    ball.GetComponent<Ball>().speed = 30;
+
                     rigidbody2d.velocity = new Vector2(0, 0).normalized;
                     transform.position = new Vector3(0.0f, 0.0f, 0.0f);
 
@@ -75,7 +81,7 @@ namespace Mirror
             {
                 rigidbody2d.velocity = new Vector2(0, 0).normalized;
                 transform.position = new Vector3(0.0f, 0.0f, 0.0f);
-
+                
                 Invoke("restart", 1);
             }
         }
@@ -89,13 +95,14 @@ namespace Mirror
             else {
                 rigidbody2d.velocity = Vector2.left * speed;
             }
-                
+            
         }
 
         public void speedUp()
         {
             ball = GameObject.FindGameObjectWithTag("Ball");
-            ball.GetComponent<Ball>().speed += 10;
+            ball.GetComponent<Ball>().speed += 5;
         }
+
     }
 }

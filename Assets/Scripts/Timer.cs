@@ -10,9 +10,7 @@ namespace Mirror
     {
         [SyncVar]
         public float currentTime;
-        public float toSpeedUp;
 
-        public Ball ball_script;
         public NetworkManagerPong network_script;
 
         public TextMeshProUGUI CountUpTimer;
@@ -23,7 +21,6 @@ namespace Mirror
             base.OnStartServer();
            
             currentTime = 0f;
-            toSpeedUp = 0;
             network_script = GameObject.FindGameObjectWithTag("Network").GetComponent<NetworkManagerPong>();
         }
 
@@ -33,19 +30,11 @@ namespace Mirror
         {
             if (network_script.getGameStart())
             {
-                toSpeedUp += 1 * Time.deltaTime;
+                
                 if(isServer){
                     Debug.Log("corriendo en server");
                 }
                 runTime();
-
-
-                if (toSpeedUp.ToString("0") == "10")
-                {
-                    toSpeedUp = 0;
-
-                    ball_script.speedUp();
-                }
             }
         }
 
