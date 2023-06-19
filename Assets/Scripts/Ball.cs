@@ -101,7 +101,7 @@ namespace Mirror
         public void speedUp()
         {
             ball = GameObject.FindGameObjectWithTag("Ball");
-            ball.GetComponent<Ball>().speed += 5;
+            ball.GetComponent<Ball>().speed += 2;
         }
 
     }
